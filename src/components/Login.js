@@ -8,16 +8,12 @@ class Login extends React.Component {
 super(props);
 this.state={
   username:'',
-  password:'',
-  buttonDisabled:false
+  password:''
 }
   }
 
   setInputValue(prop,val){
     val = val.trim();
-    if(val.length> 12){
-      return;
-    }
     this.setState({
       [prop]:[val]
     })
@@ -26,44 +22,23 @@ this.state={
   resetForm(){
     this.setState({
       username:'',
-      password:'',
-      buttonDisabled:false
+      password:''
     })
   }
 
   async login(){
-    if(!this.state.username){
+    if(!this.state.password || !this.state.username){
+      alert('Enter credentials!!');
       return;
     }
-    if(!this.state.password){
-      return;
-    }
-    this.setState({
-      buttonDisabled:true
-    })
-    try{
-        let res = await fetch('/login',{
-          method:'post',
-          headers:{
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            username: this.state.username,
-            password: this.state.password
-          })
-        })
-        let result = await res.json();
-        if(result && result.success){
+    if(this.state.password == 'test' 
+          && this.state.username == 'test'){
+          localStorage.setItem("username", "test");
           UserStore.isLoggedIn = true;
-          UserStore.username = result.username;
-        }else if(result && result.success === false){
-          this.resetForm();
-          alert(result.msg);
-        }
-    }catch(e){
-      console.log(e);
+          UserStore.username = 'test';
+    }else{
       this.resetForm();
+      alert('Invalid credentials!!');
     }
   }
 
@@ -85,7 +60,6 @@ this.state={
         />
          <SubmitButton 
                 text={'Login'}
-                disabled={this.state.buttonDisabled}
                 onClick={() => this.login()}
                 />
       </div>
