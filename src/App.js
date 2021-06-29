@@ -2,7 +2,7 @@ import React from 'react';
 import UserStore from './stores/UserStore';
 import Login from './components/Login';
 import { observer } from 'mobx-react';
-import SubmitButton from './components/SubmitButton';
+import Dashboard from './components/Dashboard';
 import './App.css';
 
 class App extends React.Component {
@@ -16,22 +16,12 @@ class App extends React.Component {
       }
   }
 
-  async logout(){
-    UserStore.isLoggedIn = false;
-    UserStore.username = '';
-    localStorage.setItem("username", undefined);
-  }
-
   render(){
       if(UserStore.isLoggedIn){
         return (
         <div className="app">
-          <div className="container">
-              <SubmitButton 
-                text={'Logout'}
-                disabled={false}
-                onClick={() => this.logout()}
-              /> 
+          <div className="containerDashboard">
+              <Dashboard/>
           </div>
         </div>
         )

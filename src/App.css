@@ -10,7 +10,7 @@ body, html, #root, .app, .container{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #282c34;
+  background-color: steelblue;
 }
 
 .loginForm{
@@ -52,4 +52,33 @@ body, html, #root, .app, .container{
   border: 2px #1189de;
   background: #fff;
   cursor: pointer;
+}
+
+.containerDashboard{
+  font-size: 28px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: steelblue;
+  align-items: center;
+  justify-content: center;
+}
+
+.textColor{
+  color: white;
+  padding: 18px;
+}
+
+.header{
+  display: inline-flex;
+}
+
+.frameClass{
+
+}
+
+.bodyClass{
+  display: inline-flex;
 }

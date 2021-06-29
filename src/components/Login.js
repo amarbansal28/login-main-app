@@ -45,7 +45,7 @@ this.state={
   render(){
       return (
       <div className="login">
-        Log in
+        Sign in
         <InputField
             type='text'
             placeholder='Username'
