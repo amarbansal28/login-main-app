@@ -1,3 +1,11 @@
+# To access the app use the below commands:
+1. git clone https://github.com/amarbansal28/login-main-app
+2. cd login-main-app
+3. npm i
+4. npm start 
+5. use the username as "test" and password as "test"
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
