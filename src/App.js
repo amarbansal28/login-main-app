@@ -19,7 +19,7 @@ class App extends React.Component {
   render(){
       if(UserStore.isLoggedIn){
         return (
-        <div className="app">
+        <div>
           <div className="containerDashboard">
               <Dashboard/>
           </div>

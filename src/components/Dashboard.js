@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
         super(props);
         this.state={
           url1:'https://www.udayy.com/',
-          url2:'https://www.udayy.com/'
+          url2:'https://www.udayy.com/about-us'
         }
           }
 
@@ -30,27 +30,34 @@ class Dashboard extends React.Component {
   render(){
       return (
           <div>
-        <div className="header">
+        <div className="headerClass">
                <span className='textColor'>Hi {UserStore.username}!</span>
-               <InputField
-                  type='text'
-                  value = {this.state.url1 ? this.state.url1 : ''}
-                  onChange = {(val) => this.setInputValue('url1',val)}    
-                    placeholder='URL-1'
-                />
-                <InputField
-                  type='text'
-                    placeholder='URL-2'
-                    value = {this.state.url2 ? this.state.url2 : ''}
-                    onChange = {(val) => this.setInputValue('url2',val)} 
-                />
+           
                 <SubmitButton 
                 text={'Logout'}
                 disabled={false}
                 onClick={() => this.logout()}
                 /> 
         </div>
-        <div className="bodyClass">
+
+        <div className="row">
+        <div className="column1">
+        <InputField
+                  type='text'
+                  value = {this.state.url1 ? this.state.url1 : ''}
+                  onChange = {(val) => this.setInputValue('url1',val)}    
+                    placeholder='URL-1'
+                /></div>
+                 <div className="column1">
+                <InputField 
+                  type='text'
+                    placeholder='URL-2'
+                    value = {this.state.url2 ? this.state.url2 : ''}
+                    onChange = {(val) => this.setInputValue('url2',val)} 
+                /></div>
+        </div>
+
+        <div className="row">
         <Frame 
             src= {this.state.url1}
         />

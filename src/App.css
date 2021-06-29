@@ -57,13 +57,6 @@ body, html, #root, .app, .container{
 .containerDashboard{
   font-size: 28px;
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: steelblue;
-  align-items: center;
-  justify-content: center;
 }
 
 .textColor{
@@ -71,14 +64,41 @@ body, html, #root, .app, .container{
   padding: 18px;
 }
 
-.header{
-  display: inline-flex;
-}
-
-.frameClass{
-
+.headerClass{
+  padding: 20px 10px;
+  display: flex;
+  background-color: steelblue;
+  width: 100%;
 }
 
 .bodyClass{
-  display: inline-flex;
+  display: flex;
+}
+
+.frameClass{
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+}
+
+.column1 {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
