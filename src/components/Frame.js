@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 class Frame extends React.Component {
-  render(){
-      return (
+  render() {
+    return (
       <div className="column">
-         <iframe className="frameClass" src={this.props.src}></iframe> 
+        <iframe className="frameClass" src={this.props.src}></iframe>
       </div>
     );
   }
